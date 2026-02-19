@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen px-4 flex flex-col bg-background relative overflow-hidden">
       {/* Badge fixo no topo */}
-      <div className="flex justify-center mt-18 md:mt-32 shrink-0 fixed top-0 left-0 right-0 z-10">
+      <div className="flex justify-center mt-18 md:mt-24 2xl:mt-32 shrink-0 fixed top-0 left-0 right-0 z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-sm font-medium animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-orange-500" />
           Bem-vindo ao Garimpei Shop
@@ -39,7 +39,7 @@ export default function HeroSection() {
             {/* Main Title */}
             <div className="space-y-4">
               <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight text-foreground flex items-center justify-center">
-                <img src="/public/logo-branco.png" alt="Garimpei Shop" className="h-22  md:h-32 mx-auto mb-10" />
+                <img src="/public/logo-branco.png" alt="Garimpei Shop" className="h-22 md:h-26 2xl:h-32 mx-auto mb-10" />
               </h1>
 
               {/* Subtitle with emojis */}
@@ -72,7 +72,7 @@ export default function HeroSection() {
               <button
                 type="button"
                 onClick={goToWhatsAppGroup}
-                className="group px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-xl hover:shadow-lg hover:shadow-orange-500/40 transition-smooth hover:scale-105 glow-orange flex items-center justify-center gap-2"
+                className="group px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-lg xl:text-xl hover:shadow-lg hover:shadow-orange-500/40 transition-smooth hover:scale-105 glow-orange flex items-center justify-center gap-2"
               >
                 <span>GRUPO DO WHATSAPP</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
