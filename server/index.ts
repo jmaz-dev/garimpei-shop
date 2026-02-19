@@ -20,7 +20,7 @@ app.use(express.static(staticPath));
 
 // Handle client-side routing - serve index.html for all routes
 app.get("*", (_req: Request, res: Response) => {
-  res.sendFile(path.join(staticPath, "index.html"));
+  res.sendFile("index.html", { root: staticPath });
 });
 
 // For Vercel serverless functions
