@@ -39,7 +39,7 @@ export default function HeroSection() {
             {/* Main Title */}
             <div className="space-y-4">
               <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight text-foreground flex items-center justify-center">
-                <img src="/public/logo-branco.png" alt="Garimpei Shop" className="h-22 md:h-26 2xl:h-32 mx-auto mb-10" />
+                <img src="/logo-branco.png" alt="Garimpei Shop" className="h-22 md:h-26 2xl:h-32 mx-auto mb-10" />
               </h1>
 
               {/* Subtitle with emojis */}
