@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
 /** Link do grupo do WhatsApp — preencha quando tiver o link */
-const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/KDj6CUZTWUVAoQPyfnzg8h?mode=gi_t";
+const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/ItNjv9hvxo3741JunKUi6n";
 
 /**
  * Redireciona para o link do grupo do WhatsApp (abre em nova aba).
