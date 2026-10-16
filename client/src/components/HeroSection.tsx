@@ -4,7 +4,7 @@ const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/ItNjv9hvxo3741JunKUi6n";
 
   function registrarClique() {
     if (typeof window.fbq === 'function') {
-      window.fbq('trackCustom', 'CliqueRedirecionamento', {
+      window.fbq('track', 'Lead', {
         origem: 'hero',
         botao: 'cta_principal',
       });
