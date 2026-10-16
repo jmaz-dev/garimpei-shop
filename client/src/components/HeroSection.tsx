@@ -13,7 +13,7 @@ const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/ItNjv9hvxo3741JunKUi6n";
 
 export default function HeroSection() {
   return (
-    <main className="relative isolate min-h-screen overflow-hidden bg-[#202020] px-5 pb-8 pt-16 text-white sm:px-8 sm:pt-20">
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#202020] px-7 pb-4 pt-7 text-white sm:px-8 sm:pt-20">
       <div
         aria-hidden="true"
         className="hero-ambient pointer-events-none absolute inset-0 -z-10"
