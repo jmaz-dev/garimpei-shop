@@ -1,111 +1,75 @@
-import { ArrowRight } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
-/** Link do grupo do WhatsApp — preencha quando tiver o link */
 const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/ItNjv9hvxo3741JunKUi6n";
 
-/**
- * Redireciona para o link do grupo do WhatsApp (abre em nova aba).
- * Quando WHATSAPP_GROUP_LINK estiver preenchido, o usuário será redirecionado.
- */
-function goToWhatsAppGroup() {
-  const url = WHATSAPP_GROUP_LINK || "#";
-  if (url.startsWith("http")) {
-    window.open(url, "_blank", "noopener,noreferrer");
-  } else {
-    window.location.href = url;
+  function registrarClique() {
+    if (typeof window.fbq === 'function') {
+      window.fbq('trackCustom', 'CliqueRedirecionamento', {
+        origem: 'hero',
+        botao: 'cta_principal',
+      });
+    }
   }
-}
 
-/**
- * Hero Section Component
- * Design Philosophy: Bold typography, gradient text, playful emojis
- * Responsive layout with clear hierarchy and strong CTA
- */
 export default function HeroSection() {
   return (
-    <section className="min-h-screen px-4 flex flex-col bg-background relative overflow-hidden">
-      {/* Badge fixo no topo */}
-      <div className="flex justify-center mt-18 md:mt-24 2xl:mt-32 shrink-0 fixed top-0 left-0 right-0 z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-sm font-medium animate-fade-in-up">
-          <span className="w-2 h-2 rounded-full bg-orange-500" />
-          Bem-vindo ao Garimpei Shop
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#202020] px-5 pb-8 pt-16 text-white sm:px-8 sm:pt-20">
+      <div
+        aria-hidden="true"
+        className="hero-ambient pointer-events-none absolute inset-0 -z-10"
+      />
+
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 px-4 py-2 text-xs font-medium text-white/90 sm:text-sm">
+          <span className="h-2 w-2 rounded-full bg-[#F27405] shadow-[0_0_12px_rgba(242,116,5,0.9)]" />
+          <span>Ofertas reais e verificadas todos os dias</span>
         </div>
+
+        <img
+          src="/logo-branco.png"
+          alt="Garimpei Shop"
+          className="mt-6 h-auto  w-[min(53vw,280px)] sm:mt-10 sm:w-[min(52vw,340px)]"
+        />
+
+        <h1 className="mt-8 max-w-3xl text-[2rem] sm:text-[clamp(2rem,8.2vw,3.75rem)] font-extrabold leading-[1.14] tracking-[-0.045em] sm:mt-12">
+          Chega de pagar caro
+          <br className="hidden min-[390px]:block" /> em{" "}
+          <span className="text-[#F27405]">produtos fitness</span>
+        </h1>
+
+        <p className="mt-4 max-w-2xl text-[0.688rem] leading-relaxed text-white/70 sm:mt-6 sm:text-lg">
+          Entre agora para o grupo e receba{" "}
+          <span className="font-semibold text-white">cupons e ofertas imperdíveis</span>{" "}
+          todos os dias em produtos fitness, calçados, eletrônicos e muito mais,
+          de lojas confiáveis e verificadas!
+        </p>
+
+        <a
+          href={WHATSAPP_GROUP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={registrarClique}
+          className="animate-neon-pulse mt-8 inline-flex h-12 w-full max-w-[18rem] sm:max-w-[540px] items-center justify-center gap-[.5rem] rounded-[18px] bg-[#F27405] px-5 py-3 text-base font-semibold tracking-[-0.025em] text-white transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F27405] sm:mt-9 sm:min-h-[68px] sm:gap-3 sm:rounded-[22px] sm:text-2xl"
+        >
+          <span className="relative flex h-8 w-8 shrink-0 items-center justify-center">
+            <MessageCircle aria-hidden="true" className="absolute h-8 w-8" strokeWidth={1.8} />
+            <Phone aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2.4} />
+          </span>
+          <span>ENTRAR NO GRUPO AGORA</span>
+        </a>
+
+        <img
+          src="/grupo-semluz-copia.png"
+          alt="Ofertas, cupons exclusivos e produtos compartilhados no grupo Garimpei Shop"
+          className="mt-4 h-auto w-full max-w-[440px] sm:mt-7 sm:max-w-[500px]"
+        />
+
+        <img
+          src="/clientes.png"
+          alt="Mais de 50.000 pessoas já economizam com a gente"
+          className="mt-1 h-auto w-full max-w-[400px] sm:max-w-[700px] sm:mt-6"
+        />
       </div>
-
-      {/* Conteúdo do hero centralizado no restante da página */}
-      <div className="flex-1 flex items-center justify-center ">
-        <div className="container mx-auto max-w-4xl relative z-1 ">
-          <div className="text-center space-y-8 animate-fade-in-up">
-            {/* Main Title */}
-            <div className="space-y-4">
-              <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight text-foreground flex items-center justify-center">
-                <img src="/logo-branco.png" alt="Garimpei Shop" className="h-22 md:h-26 2xl:h-32 mx-auto mb-10" />
-              </h1>
-
-              {/* Subtitle with emojis */}
-              <div className="space-y-0 text-lg md:text-xl text-foreground/80 font-medium">
-                <p className="flex items-center justify-center">
-                  <span className="text-xl font-bold uppercase">Pare de pagar caro.</span>
-                </p>
-                <p className="flex text-base items-center justify-center">
-                  <span>Receba cupons de até 80% de desconto</span>
-                </p>
-                <p className="flex text-base items-center justify-center">
-                  <span>direto no seu WhatsApp.</span>
-                </p>
-                {/* <p className="flex items-center justify-center gap-2">
-                <span>🎉</span>
-                <span>As ofertas relâmpago saem primeiro no WhatsApp</span>
-              </p> */}
-              </div>
-            </div>
-
-            {/* Description */}
-            {/* <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-            Acesse o canal do WhatsApp e economize com as melhores promoções e
-            cupons exclusivos. Somos uma comunidade dedicada a encontrar as
-            melhores ofertas para você.
-          </p> */}
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <button
-                type="button"
-                onClick={goToWhatsAppGroup}
-                className="group px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold text-lg xl:text-xl hover:shadow-lg hover:shadow-orange-500/40 transition-smooth hover:scale-105 glow-orange flex items-center justify-center gap-2"
-              >
-                <span>GRUPO DO WHATSAPP</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
-              </button>
-
-              {/* <button className="px-8 py-4 rounded-lg border-2 border-orange-500/30 text-orange-500 font-semibold text-base hover:bg-orange-500/10 transition-smooth hover:border-orange-500/60">
-              Saiba Mais
-            </button> */}
-            </div>
-
-            {/* Social Proof */}
-            {/* <div className="pt-8 border-t border-border/50">
-            <p className="text-sm text-foreground/60 mb-4">Junte-se a nossa comunidade</p>
-            <div className="flex items-center justify-center gap-8">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-orange-500">1000+</p>
-                <p className="text-xs text-foreground/60">Membros ativos</p>
-              </div>
-              <div className="w-px h-12 bg-border/50" />
-              <div className="text-center">
-                <p className="text-2xl font-bold text-orange-500">50+</p>
-                <p className="text-xs text-foreground/60">Ofertas/mês</p>
-              </div>
-              <div className="w-px h-12 bg-border/50" />
-              <div className="text-center">
-                <p className="text-2xl font-bold text-orange-500">24/7</p>
-                <p className="text-xs text-foreground/60">Suporte</p>
-              </div>
-            </div>
-          </div> */}
-          </div>
-        </div>
-      </div>
-    </section>
+    </main>
   );
 }

@@ -44,14 +44,10 @@ cd garimpei-shop
 Navegue até o diretório do projeto e instale todas as dependências necessárias:
 
 ```bash
-# Usando npm
-npm install
-
-# Ou usando pnpm (mais rápido)
-pnpm install
+corepack pnpm install
 ```
 
-Este comando irá ler o arquivo `package.json` e instalar todas as dependências listadas, incluindo React, Tailwind CSS, Vite e outras bibliotecas necessárias.
+O projeto usa pnpm como gerenciador de pacotes (`packageManager` no `package.json`) e mantém o `pnpm-lock.yaml` como lockfile. Use pnpm para respeitar esse lockfile e evitar conflitos de dependências peer ao instalar com npm.
 
 ## 🏃 Executando a Aplicação
 
